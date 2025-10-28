@@ -70,7 +70,11 @@ Copy code
 > - You store each encrypted box (ciphertext) alongside a wrapped DEK.  
 > - When you need to open the box, KMS unwraps the DEK behind the scenes.
 
-```mermaid
+flowchart LR
+  subgraph KMS_VAULT["🏦 Cloud KMS Vault"]
+    KEK[(CMK/KEK)]
+    
+ ```mermaid
 flowchart LR
   subgraph KMS_VAULT["🏦 Cloud KMS Vault"]
     KEK[(CMK/KEK)]
@@ -81,6 +85,8 @@ flowchart LR
   C --> E[(S3 / Blob / GCS Object)]
   D --> E
   KEK -.rotation/audit.-> KEK
+```
+
 ⚙️ Hands-On Labs
 Day	Focus	Tools
 Day 1 – AWS KMS	Create CMK, S3 SSE-KMS, EBS Default Encryption	AWS CLI + CloudFormation + Terraform
