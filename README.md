@@ -1,4 +1,14 @@
 <p align="center">
+  <img src="https://github.com/user-attachments/assets/0ce41038-66c2-4146-a1ab-674790ecf941" 
+       alt="Secure the Cloud Banner" 
+       width="70%" 
+       style="border-radius: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.25);">
+</p>
+
+
+
+
+<p align="center">
   <img src="https://github.com/user-attachments/assets/0ce41038-66c2-4146-a1ab-674790ecf941" alt="Secure the Cloud Banner" width="70%">
 </p>
 
