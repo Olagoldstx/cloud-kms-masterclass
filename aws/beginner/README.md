@@ -1,3 +1,7 @@
+![securethecloud](https://github.com/user-attachments/assets/3bc3c1e6-3aad-4723-89aa-29be88a8eb9f)
+
+
+
 # AWS KMS — Beginner Track
 
 **Day 1** covers:
