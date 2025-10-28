@@ -1,3 +1,6 @@
+![securethecloud](https://github.com/user-attachments/assets/2a717544-7b0f-41a8-b05e-8ff1be77ac7b)
+
+
 # Day 1 — AWS KMS (Beginner): S3 + EBS with Customer Managed Key
 
 ## 🎯 Goals
