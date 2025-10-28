@@ -16,11 +16,11 @@ You generate a **box key (DEK)** to lock your file. You store the **box (ciphert
 When you open the box, the vault unwraps the DEK for you—**you never hold the master key**.
 
 
+```mermaid
 flowchart LR
   subgraph KMS["🏦 AWS KMS"]
     KEK[(CMK/KEK)]
   end
-  ```mermaid
   A[Plaintext file] -->|Generate DEK| B((DEK))
   B -->|Encrypt| C[Ciphertext]
   B -->|Encrypt with KEK| D[Encrypted DEK]
