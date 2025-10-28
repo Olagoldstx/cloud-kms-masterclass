@@ -1,7 +1,7 @@
 # 🟦 Day 2 — Azure Key Vault (Beginner): Encrypt Blob Storage with a Customer-Managed Key (CMK)
 
-![Banner](../securethecloud.jpg)
----
+![securethecloud](https://github.com/user-attachments/assets/9f8934cb-85ff-4b74-906a-dc3fa66f4e18)
+
 
 ## 🎯 Goals
 - Create an **Azure Key Vault (AKV)** and a **symmetric CMK**  
