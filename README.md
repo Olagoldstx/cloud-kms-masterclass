@@ -1,178 +1,91 @@
-![securethecloud](https://github.com/user-attachments/assets/0ce41038-66c2-4146-a1ab-674790ecf941)
-
 <p align="center">
-  <img src="![securethecloud](https://github.com/user-attachments/assets/4f4fd65f-d56b-490b-9237-45572b13fbe5)
- width="70%">
+  <img src="https://github.com/user-attachments/assets/0ce41038-66c2-4146-a1ab-674790ecf941" alt="Secure the Cloud Banner" width="70%">
 </p>
 
-
-
-# 🛡️ **Cloud KMS Masterclass (AWS · Azure · GCP)**  
+# 🧭 Cloud KMS Masterclass (AWS · Azure · GCP)
 _A multi-cloud encryption journey — from zero to hero._
 
 ---
 
-## ☁️ **Welcome to the Masterclass**
-> “Keys are the crown jewels of cloud security — and you’re the locksmith.” 🔑  
+## 🎓 Welcome to the Masterclass
+Keys are the **crown jewels of cloud security** — and you’re about to become the **keysmith**.  
+This course takes you from KMS beginner to **multi-cloud encryption architect** by mastering:
 
-This course transforms you from a KMS beginner to a **multi-cloud encryption architect** by mastering:
-- **AWS KMS**
-- **Azure Key Vault / Managed HSM**
-- **Google Cloud KMS / EKM**
+- 🔐 **AWS KMS**
+- 🏦 **Azure Key Vault / Managed HSM**
+- ☁️ **Google Cloud KMS / External Key Manager**
 
-Each lab fuses:
-- 🧠 Deep theory + analogies  
-- ⚙️ CLI & Terraform / IaC  
-- 🪄 Mermaid diagrams (visual encryption flows)  
-- 🧩 Real-world cross-cloud integration  
-- 🎯 Quizzes + flashcards for muscle memory  
+Each day includes: deep theory, CLI & IaC, diagrams, cloud-native verification, and a quiz/anki set.
 
 ---
 
-## 🎯 **Learning Objectives**
+## 🗺️ 10-Day Roadmap
 
-| Level | Goals |
-|-------|-------|
-| **Beginner (Days 1 – 3)** | Understand KMS basics, CMKs, symmetric vs asymmetric keys, encrypt data at rest across S3, Blob, GCS |
-| **Intermediate (Days 4 – 6)** | Master CMK rotation, grants, BYOK, and service-linked encryption (EBS, RDS, BigQuery CMEK) |
-| **Advanced (Days 7 – 10)** | Implement HSM, EKM, automation, and cross-cloud CMEK policies for zero-trust data control |
+| Day | Provider | Title | Link |
+|:--:|:--:|---|---|
+| **1** | 🟧 | S3 + EBS with Customer-Managed Key | [🔗 View Lab](day-by-day/day1-aws-beginner.md) |
+| **2** | 🟦 | Blob Storage Encryption with AKV CMK | [🔗 View Lab](day-by-day/day2-azure-beginner.md) |
+| **3** | 🟨 | BigQuery CMEK + Cloud Storage Encryption | 🚧 _Coming soon_ |
+| **4** | 🟧 | CMK Rotation + Aliases Automation | 🚧 _Coming soon_ |
+| **5** | 🟦 | Managed HSM + Disk Encryption Sets | 🚧 _Coming soon_ |
+| **6** | 🟨 | External Key Manager (EKM) Integration | 🚧 _Coming soon_ |
+| **7** | ☁️ | Cross-Account / Cross-Cloud BYOK | 🚧 _Coming soon_ |
+| **8** | ☁️ | Envelope Encryption Deep Dive | 🚧 _Coming soon_ |
+| **9** | ☁️ | Key Governance, RBAC, Audit | 🚧 _Coming soon_ |
+| **10** | ☁️ | Capstone: Unified KMS Security Dashboard | 🚧 _Coming soon_ |
 
 ---
 
-## 🧭 **Repository Map**
-
+## 🧩 Repository Map
+```plaintext
 cloud-kms-masterclass/
-├── aws/
-│ ├── beginner/
-│ ├── intermediate/
-│ └── advanced/
-├── azure/
-│ ├── beginner/
-│ ├── intermediate/
-│ └── advanced/
-├── gcp/
-│ ├── beginner/
-│ ├── intermediate/
-│ └── advanced/
+├── README.md
+├── day-by-day/
+│   ├── day1-aws-beginner.md
+│   ├── day2-azure-beginner.md
+│   └── day3-gcp-beginner.md
+├── docs/
+│   ├── aws/
+│   ├── azure/
+│   ├── gcp/
+│   └── cross-cloud/
 ├── common/
-│ ├── diagrams/
-│ ├── scripts/
-│ └── resources/
-└── day-by-day/
-├── day1-aws-beginner.md
-├── day2-azure-beginner.md
-└── day3-gcp-beginner.md
+│   ├── diagrams/
+│   └── scripts/
+└── anki/
+🧠 Encryption Mental Model
+Think of KMS as a digital vault. The master key (CMK) never leaves the vault.
+Workloads get a temporary data key (DEK) to encrypt data; that DEK is then encrypted with your CMK — envelope encryption.
 
-pgsql
-Copy code
-
----
-
-## 🔒 **The Encryption Mental Model**
-
-> Think of KMS as a **bank vault**:
-> - The **master vault key (CMK/KEK)** never leaves the vault.  
-> - You mint **temporary box keys (DEKs)** to lock your data.  
-> - You store each encrypted box (ciphertext) alongside a wrapped DEK.  
-> - When you need to open the box, KMS unwraps the DEK behind the scenes.
-
-flowchart LR
-  subgraph KMS_VAULT["🏦 Cloud KMS Vault"]
-    KEK[(CMK/KEK)]
-    
- ```mermaid
-flowchart LR
-  subgraph KMS_VAULT["🏦 Cloud KMS Vault"]
-    KEK[(CMK/KEK)]
-  end
-  A[Plaintext Data] -->|Generate DEK| B((Data Encryption Key))
-  B -->|Encrypt| C[Ciphertext]
-  B -->|Wrap with KEK| D[Encrypted DEK]
-  C --> E[(S3 / Blob / GCS Object)]
-  D --> E
-  KEK -.rotation/audit.-> KEK
-```
-
-⚙️ Hands-On Labs
-Day	Focus	Tools
-Day 1 – AWS KMS	Create CMK, S3 SSE-KMS, EBS Default Encryption	AWS CLI + CloudFormation + Terraform
-Day 2 – Azure Key Vault	Generate CMK, enable SSE with CMK for Blob Storage	Azure CLI + ARM/Bicep
-Day 3 – GCP Cloud KMS	Create key ring, key, CMEK for GCS and BigQuery	gcloud + Deployment Manager
-Day 4–6 – Intermediate	Rotation / BYOK / Audit	IaC + Cross-Cloud Automation
-Day 7–10 – Advanced	EKM / HSM / Multi-Region Encryption	Terraform + Automation + Dashboards
-
-🧰 Prerequisites
-✅ Installed tools
-
-bash
-Copy code
-git --version
-aws --version
-az --version
-gcloud --version
-terraform --version
-✅ Cloud accounts with permission to create:
-
-AWS KMS / S3 / EBS / RDS
-
-Azure Key Vault / Storage / Managed HSM
-
-GCP KMS / GCS / BigQuery
-
-✅ Default regions:
-
-AWS → us-east-1
-
-Azure → eastus
-
-GCP → us-central1
-
-📚 Cross-Cloud Concept Map
 mermaid
 Copy code
-graph TD
-  subgraph AWS
-    A1[S3 Bucket]
-    A2[EBS Volume]
-    A3[KMS Key]
+%%{init: {'theme':'base'}}%%
+flowchart LR
+  subgraph Vault["🏦 KMS / Key Vault / Cloud KMS"]
+    CMK[(Customer Managed Key)]
   end
-  subgraph Azure
-    B1[Blob Storage]
-    B2[Managed Disk]
-    B3[Key Vault Key]
-  end
-  subgraph GCP
-    C1[GCS Bucket]
-    C2[BigQuery Dataset]
-    C3[Cloud KMS Key]
-  end
+  DEK[Data Encryption Key]
+  Data[(Encrypted Object)]
+  DEK -->|"Encrypts Data"| Data
+  CMK -->|"Wraps DEK"| DEK
+  CMK -. "Audit Trail" .-> Vault
+🧱 Automation Stack
+🐍 CLI / SDK: AWS CLI · Azure CLI · gcloud
 
-  A3 <--> B3 <--> C3
-  A1 --> A3
-  B1 --> B3
-  C1 --> C3
-  A2 --> A3
-  B2 --> B3
-  C2 --> C3
-  A3 -.sync.-> C3
-  B3 -.policy.-> A3
-🧩 Next Steps
-🎬 Clone this repo:
+⚙️ IaC: Terraform · CloudFormation · Bicep
 
-bash
-Copy code
-git clone https://github.com/Olagoldstx/cloud-kms-masterclass.git
-cd cloud-kms-masterclass
-✏️ Open each lab with nano and follow along.
+🔒 Security: Least Privilege · RBAC · CMK Isolation
 
-💾 Commit your progress:
+🧾 Auditing: CloudTrail · Activity Logs · Audit Logs
+
+🧠 Study Tip
+“Encryption without key mastery is illusion — this course makes you the keysmith.” 🔐
+
+Commit as you complete each day:
 
 bash
 Copy code
 git add .
-git commit -m "feat: complete day1 aws kms lab"
+git commit -m "feat: complete dayX lab"
 git push
-🏁 Your Journey Starts Now
-“Encryption without key mastery is illusion — this course makes you the keysmith.” 🔐
-
-Let’s roll 🚀
+<p align="center">💥 <b>Let’s roll — your journey to KMS mastery begins here.</b> 🚀</p> ```
