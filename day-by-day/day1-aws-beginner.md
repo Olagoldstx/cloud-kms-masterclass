@@ -15,7 +15,6 @@ Think of KMS as a **bank vault**. The **master key (CMK/KEK)** never leaves the 
 You generate a **box key (DEK)** to lock your file. You store the **box (ciphertext)** alongside the **wrapped DEK**.  
 When you open the box, the vault unwraps the DEK for you—**you never hold the master key**.
 
-
 ```mermaid
 flowchart LR
   subgraph KMS["🏦 AWS KMS"]
