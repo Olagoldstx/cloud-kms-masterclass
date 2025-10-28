@@ -1,4 +1,5 @@
-securethecloud.jpeg
+![securethecloud](https://github.com/user-attachments/assets/0ce41038-66c2-4146-a1ab-674790ecf941)
+
 
 # 🛡️ **Cloud KMS Masterclass (AWS · Azure · GCP)**  
 _A multi-cloud encryption journey — from zero to hero._
