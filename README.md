@@ -1,3 +1,5 @@
+securethecloud.jpeg
+
 # 🛡️ **Cloud KMS Masterclass (AWS · Azure · GCP)**  
 _A multi-cloud encryption journey — from zero to hero._
 
