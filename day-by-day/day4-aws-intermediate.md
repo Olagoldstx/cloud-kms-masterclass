@@ -141,20 +141,29 @@ Rotation is the quiet hum of security maturity.
 No downtime, no reconfiguration — just steady evolution.
 
 🔍 Diagram — AWS KMS Rotation Flow
-mermaid
-Copy code
-flowchart LR
-  App["🧩 Application"]
-  Alias["🔑 Alias: app/secure-key"]
-  V1["CMK v1"]
-  V2["CMK v2"]
-  Vault["🏦 KMS Vault"]
 
-  App -->|"Encrypt/Decrypt via Alias"| Alias
-  Alias --> V1
-  V1 -.rotate→.-> V2
-  V2 --> Vault
-  Vault -.rotation logs.-> CloudTrail[(CloudTrail Logs)]
+```mermaid
+flowchart LR
+    App["🧩 Application"]
+    Alias["🔑 Alias: app/secure-key"]
+    V1["CMK v1"]
+    V2["CMK v2"]
+    Vault["🏦 KMS Vault"]
+    CloudTrail[(CloudTrail Logs)]
+    
+    App -->|"Encrypt/Decrypt<br/>via Alias"| Alias
+    Alias -->|"Points to<br/>Current Version"| V2
+    V1 -.->|"rotated to"| V2
+    V2 -->|"Stored in"| Vault
+    Vault -.->|"Rotation logs"| CloudTrail
+
+    style App fill:#e3f2fd
+    style Alias fill:#fff3e0
+    style V1 fill:#ffebee
+    style V2 fill:#e8f5e8
+    style Vault fill:#f3e5f5
+    style CloudTrail fill:#f5f5f5
+    ```
 🧠 Quick Quiz
 What’s the main benefit of using aliases in AWS KMS?
 
