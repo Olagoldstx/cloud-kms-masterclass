@@ -26,18 +26,17 @@ Each day includes: deep theory, CLI & IaC, diagrams, cloud-native verification, 
 ## 🗺️ 10-Day Roadmap
 
 | Day | Provider | Title | Link |
-|:--:|:--:|---|---|
-| **1** | 🟧 | S3 + EBS with Customer-Managed Key | [🔗 View Lab](day-by-day/day1-aws-beginner.md) |
-| **2** | 🟦 | Blob Storage Encryption with AKV CMK | [🔗 View Lab](day-by-day/day2-azure-beginner.md) |
-| **3** | 🟨 | BigQuery CMEK + Cloud Storage Encryption | 🚧 _Coming soon_ |
-| **4** | 🟧 | CMK Rotation + Aliases Automation | 🚧 _Coming soon_ |
-| **5** | 🟦 | Managed HSM + Disk Encryption Sets | 🚧 _Coming soon_ |
-| **6** | 🟨 | External Key Manager (EKM) Integration | 🚧 _Coming soon_ |
-| **7** | ☁️ | Cross-Account / Cross-Cloud BYOK | 🚧 _Coming soon_ |
-| **8** | ☁️ | Envelope Encryption Deep Dive | 🚧 _Coming soon_ |
-| **9** | ☁️ | Key Governance, RBAC, Audit | 🚧 _Coming soon_ |
-| **10** | ☁️ | Capstone: Unified KMS Security Dashboard | 🚧 _Coming soon_ |
-
+|-----|-----------|--------|------|
+| 1 | 🟧 AWS | S3 + EBS with Customer-Managed Key | [🔗 View Lab](day-by-day/day1-aws-beginner.md) |
+| 2 | 🟦 Azure | Blob Storage Encryption with AKV CMK | [🔗 View Lab](day-by-day/day2-azure-beginner.md) |
+| 3 | 🟨 GCP | BigQuery CMEK + Cloud Storage Encryption | [🔗 View Lab](day-by-day/day3-gcp-beginner.md) |
+| 4 | 🟧 AWS | CMK Rotation + Aliases Automation | [🔗 View Lab](day-by-day/day4-aws-intermediate.md) |
+| 5 | 🟦 Azure | Managed HSM + Disk Encryption Sets | 🚧 Coming soon |
+| 6 | 🟨 GCP | External Key Manager (EKM) Integration | 🚧 Coming soon |
+| 7 | ☁️ Cross-Cloud | Cross-Account / Cross-Cloud BYOK | 🚧 Coming soon |
+| 8 | ☁️ Cross-Cloud | Envelope Encryption Deep Dive | 🚧 Coming soon |
+| 9 | ☁️ Cross-Cloud | Key Governance, RBAC, Audit | 🚧 Coming soon |
+| 10 | ☁️ Capstone | Unified KMS Security Dashboard | 🚧 Coming soon |
 ---
 
 ## 🧩 Repository Map
