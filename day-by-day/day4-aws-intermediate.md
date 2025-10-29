@@ -15,6 +15,15 @@ Instead of one eternal master key, AWS KMS lets you **rotate the inner mechanism
 You’re not replacing the vault, you’re **replacing its lock cylinder** — the key alias always points to the latest version.
 
 ```mermaid
+Unable to render rich display
+
+Parse error on line 9:
+...otated.-> V3 note right of V3: All sha
+----------------------^
+Expecting 'SEMI', 'NEWLINE', 'EOF', 'AMP', 'START_LINK', 'LINK', 'LINK_ID', got 'NODE_STRING'
+
+For more information, see https://docs.github.com/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams#creating-mermaid-diagrams
+
 %%{init: {'theme':'base'}}%%
 flowchart LR
   Alias["🔑 Alias: app/secure-key"]
@@ -25,6 +34,7 @@ flowchart LR
   V1 -.rotated.-> V2
   V2 -.rotated.-> V3
   note right of V3: All share the same alias<br>and same permissions
+```
 🎯 Goals
 Automate CMK rotation in AWS KMS
 
