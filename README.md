@@ -61,18 +61,28 @@ cloud-kms-masterclass/
 Think of KMS as a digital vault. The master key (CMK) never leaves the vault.
 Workloads get a temporary data key (DEK) to encrypt data; that DEK is then encrypted with your CMK — envelope encryption.
 
-mermaid
-Copy code
+```mermaid
 %%{init: {'theme':'base'}}%%
 flowchart LR
-  subgraph Vault["🏦 KMS / Key Vault / Cloud KMS"]
-    CMK[(Customer Managed Key)]
-  end
-  DEK[Data Encryption Key]
-  Data[(Encrypted Object)]
-  DEK -->|"Encrypts Data"| Data
-  CMK -->|"Wraps DEK"| DEK
-  CMK -. "Audit Trail" .-> Vault
+    subgraph Vault["🔐 Key Management Service"]
+        CMK["Customer Master Key<br/>Stored in HSM"]
+    end
+    
+    DEK["📄 Data Encryption Key<br/>Ephemeral / Wrapped"]
+    Data["💾 Encrypted Data<br/>Stored in Object Storage"]
+    
+    CMK -->|Wraps & Unwraps| DEK
+    DEK -->|Encrypts & Decrypts| Data
+    
+    Vault -.->|Audit Trail &<br/>Access Logging| Audit[(Audit Logs)]
+    
+    style Vault fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    style CMK fill:#e1f5fe,stroke:#0288d1
+    style DEK fill:#fff3e0,stroke:#f57c00
+    style Data fill:#e8f5e8,stroke:#388e3c
+    style Audit fill:#f5f5f5,stroke:#757575
+```
+
 🧱 Automation Stack
 🐍 CLI / SDK: AWS CLI · Azure CLI · gcloud
 
