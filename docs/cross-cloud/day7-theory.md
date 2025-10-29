@@ -20,13 +20,13 @@ Only the recipient bank can unwrap it securely.
 ---
 
 ## 🔐 BYOK Flow (Mermaid)
+
 ```mermaid
 flowchart LR
-  A[AWS KMS CMK] -->|Export (wrapped)| B[Azure Key Vault HSM]
+  A[AWS KMS CMK] -->|Export<br/>Wrapped Key| B[Azure Key Vault HSM]
   B -->|Rewrap| C[GCP Cloud KMS]
   C -->|Usage| D[Cross-Cloud Workloads]
 ```
-
 🧰 Tools & Formats
 Platform	Key Export Format	Tool / CLI
 AWS KMS	RSA 2048 + AES-KeyWrap	aws kms get-parameters-for-import
