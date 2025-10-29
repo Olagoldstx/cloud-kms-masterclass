@@ -17,7 +17,6 @@ Think of it as **diplomatic immunity for encryption keys** — the key resides u
 but is temporarily consulted by Google services through a secure, logged handshake.
 
 ```mermaid
-%%{init: {'theme':'base'}}%%
 flowchart LR
   subgraph YourHSM["🏦 External Key Manager (Your HSM / Vendor)"]
     ExtKey[(External CMK)]
