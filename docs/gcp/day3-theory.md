@@ -18,6 +18,8 @@ flowchart LR
   BQ["📊 BigQuery"]
   GCS -->|"Uses CMEK"| KMS
   BQ -->|"Uses CMEK"| KMS
+```
+
 🔑 Roles
 roles/cloudkms.admin — manage rings/keys
 
