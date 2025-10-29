@@ -5,13 +5,6 @@ with **lab exercises** (hands-on CLI + Terraform).
 
 ---
 
-# 📚 Cloud KMS Masterclass — Textbook Index
-
-Each module combines **theory** (concepts, diagrams, and mental models)  
-with **lab exercises** (hands-on CLI + Terraform).
-
----
-
 ## 🟧 AWS
 - Day 1 — [Theory](aws/day1-theory.md) • [Lab](../day-by-day/day1-aws-beginner.md)
 - Day 4 — [Theory](aws/day4-theory.md) • [Lab](../day-by-day/day4-aws-intermediate.md)
