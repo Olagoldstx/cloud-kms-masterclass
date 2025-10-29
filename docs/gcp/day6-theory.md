@@ -37,6 +37,7 @@ flowchart LR
   EKMConn["🔗 EKM Connection (API Layer)"]
   GCP["☁️ GCP KMS / Services"]
   Storage["📦 Cloud Storage / BigQuery / VM Disk"]
+```
 
   Storage -->|"Encrypt request"| GCP
   GCP -->|"Proxy call"| EKMConn
