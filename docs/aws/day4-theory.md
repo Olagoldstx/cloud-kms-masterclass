@@ -1,0 +1,1 @@
+<img src='https://github.com/user-attachments/assets/0ce41038-66c2-4146-a1ab-674790ecf941' width='70%'><br><h2>AWS Day 4 Theory – Key Rotation & Alias Automation</h2><p>Explore how CMK rotation and alias management work in AWS KMS, ensuring lifecycle continuity and audit traceability.</p>

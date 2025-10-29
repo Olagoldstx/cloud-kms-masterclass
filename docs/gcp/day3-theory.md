@@ -1,0 +1,1 @@
+<img src='https://github.com/user-attachments/assets/0ce41038-66c2-4146-a1ab-674790ecf941' width='70%'><br><h2>GCP Day 3 Theory – CMEK & Cloud Storage</h2><p>Understand Cloud KMS and customer-managed key integration with GCS and BigQuery.</p>

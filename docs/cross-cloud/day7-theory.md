@@ -1,0 +1,1 @@
+<img src='https://github.com/user-attachments/assets/0ce41038-66c2-4146-a1ab-674790ecf941' width='70%'><br><h2>Cross-Cloud Day 7 Theory – BYOK</h2><p>Cross-cloud key import and governance overview for AWS, Azure, and GCP.</p>

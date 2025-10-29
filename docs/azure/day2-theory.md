@@ -1,0 +1,1 @@
+<img src='https://github.com/user-attachments/assets/0ce41038-66c2-4146-a1ab-674790ecf941' width='70%'><br><h2>Azure Day 2 Theory – AKV CMK Overview</h2><p>Learn about Azure Key Vault customer-managed keys and data-plane encryption for blob storage.</p>
