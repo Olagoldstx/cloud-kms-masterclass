@@ -14,12 +14,27 @@ Every encryption system is like a **tree** — its **roots** hold the **master k
 ```mermaid
 %%{init: {'theme':'base'}}%%
 graph TD
-  A["Root: Master Key (CMK)"]
-  A --> B["Branch: Data Encryption Keys (DEKs)"]
-  B --> C["Leaves: Encrypted Data Objects"]
-  A -. Rotation .-> A
-  B -. Envelope Encryption .-> A
-Roots (CMK) – long-lived, stored in HSM
+    A["Root: Customer Master Key (CMK)"]
+    A --> B["Branch: Data Encryption Keys (DEKs)"]
+    B --> C["Leaves: Encrypted Data Objects"]
+    
+    A -.->|Rotation & Management| A
+    B -.->|Envelope Encryption| A
+    
+    classDef root fill:#e1f5fe
+    classDef branch fill:#f3e5f5
+    classDef leaf fill:#e8f5e8
+    
+    class A root
+    class B branch
+    class C leaf
+    
+    subgraph Legend
+        D[Root Key - Long-lived]:::root
+        E[Data Keys - Ephemeral]:::branch
+        F[Encrypted Data]:::leaf
+    end
+```
 
 Branches (DEK) – temporary, per-object keys
 
