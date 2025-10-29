@@ -78,6 +78,8 @@ flowchart LR
   YOU --> AWS
   YOU --> AZ
   YOU --> GCP
+```
+
 🔑 Reality matrix
 Cloud	Typical BYOK	Same bytes as others?
 AWS KMS	AES-256 import (EXTERNAL)	✅ with GCP
