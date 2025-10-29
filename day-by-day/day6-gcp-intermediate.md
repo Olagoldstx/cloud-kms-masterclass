@@ -151,7 +151,7 @@ Ideal for PCI DSS, HIPAA, Sovereign Cloud, Gov sectors.
 If your EKM endpoint is unavailable, GCP returns an encryption failure.
 You can design a dual-mode pattern: CMEK (GCP) fallback for non-critical workloads, EKM for regulated data.
 
-mermaid
+```mermaid
 Copy code
 %%{init: {'theme':'base'}}%%
 flowchart LR
@@ -164,6 +164,8 @@ flowchart LR
   end
   Storage -->|"Encrypt Primary"| ExtKey
   Storage -->|"Fallback (if EKM fails)"| KMS
+```
+
 🧠 Quiz
 How does EKM differ from CMEK in GCP?
 
