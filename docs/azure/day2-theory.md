@@ -18,6 +18,8 @@ flowchart LR
   BLOB["📦 Storage Account"]
   BLOB -->|"Encrypt/Decrypt"| KV
   MI -->|"Crypto User RBAC"| KV
+```
+
 🔑 Control model
 Control-plane: Azure RBAC (Owner/Contributor)
 

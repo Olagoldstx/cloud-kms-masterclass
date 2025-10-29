@@ -21,6 +21,8 @@ sequenceDiagram
   KMS-->>App: Plaintext DEK + Encrypted DEK (EDK)
   App->>App: Encrypt data with DEK
   App->>KMS: Decrypt(EDK) to recover DEK when needed
+```
+
 🔑 Key types
 Type	Control	Notes
 AWS-managed CMK	AWS	Created per service (S3/EBS etc.)
