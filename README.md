@@ -25,18 +25,101 @@ Each day includes: deep theory, CLI & IaC, diagrams, cloud-native verification, 
 
 ## 🗺️ 10-Day Roadmap
 
-| Day | Provider | Title | Link |
-|-----|-----------|--------|------|
-| 1 | 🟧 AWS | S3 + EBS with Customer-Managed Key | [🔗 View Lab](day-by-day/day1-aws-beginner.md) |
-| 2 | 🟦 Azure | Blob Storage Encryption with AKV CMK | [🔗 View Lab](day-by-day/day2-azure-beginner.md) |
-| 3 | 🟨 GCP | BigQuery CMEK + Cloud Storage Encryption | [🔗 View Lab](day-by-day/day3-gcp-beginner.md) |
-| 4 | 🟧 AWS | CMK Rotation + Aliases Automation | [🔗 View Lab](day-by-day/day4-aws-intermediate.md) |
-| 5 | 🟦 Azure | Managed HSM + Disk Encryption Sets | 🚧 Coming soon |
-| 6 | 🟨 GCP | External Key Manager (EKM) Integration | 🚧 Coming soon |
-| 7 | ☁️ Cross-Cloud | Cross-Account / Cross-Cloud BYOK | 🚧 Coming soon |
-| 8 | ☁️ Cross-Cloud | Envelope Encryption Deep Dive | 🚧 Coming soon |
-| 9 | ☁️ Cross-Cloud | Key Governance, RBAC, Audit | 🚧 Coming soon |
-| 10 | ☁️ Capstone | Unified KMS Security Dashboard | 🚧 Coming soon |
+<!-- Course Dashboard Cards -->
+<div align="center" style="display:grid; gap:14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+
+  <!-- Day 1 -->
+  <a href="day-by-day/day1-aws-beginner.md" style="text-decoration:none;">
+    <div style="border:1px solid #e5e7eb; border-radius:14px; padding:16px; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.06);">
+      <div style="font-size:28px;">🟧</div>
+      <div style="font-weight:700; font-size:18px; margin-top:6px;">Day 1 — AWS</div>
+      <div style="color:#374151; margin-top:4px;">S3 + EBS with Customer-Managed Key</div>
+      <div style="margin-top:10px; font-weight:600; color:#0ea5e9;">🔗 View Lab</div>
+    </div>
+  </a>
+
+  <!-- Day 2 -->
+  <a href="day-by-day/day2-azure-beginner.md" style="text-decoration:none;">
+    <div style="border:1px solid #e5e7eb; border-radius:14px; padding:16px; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.06);">
+      <div style="font-size:28px;">🟦</div>
+      <div style="font-weight:700; font-size:18px; margin-top:6px;">Day 2 — Azure</div>
+      <div style="color:#374151; margin-top:4px;">Blob Storage Encryption with AKV CMK</div>
+      <div style="margin-top:10px; font-weight:600; color:#0ea5e9;">🔗 View Lab</div>
+    </div>
+  </a>
+
+  <!-- Day 3 -->
+  <a href="day-by-day/day3-gcp-beginner.md" style="text-decoration:none;">
+    <div style="border:1px solid #e5e7eb; border-radius:14px; padding:16px; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.06);">
+      <div style="font-size:28px;">🟨</div>
+      <div style="font-weight:700; font-size:18px; margin-top:6px;">Day 3 — GCP</div>
+      <div style="color:#374151; margin-top:4px;">BigQuery CMEK + Cloud Storage Encryption</div>
+      <div style="margin-top:10px; font-weight:600; color:#0ea5e9;">🔗 View Lab</div>
+    </div>
+  </a>
+
+  <!-- Day 4 -->
+  <a href="day-by-day/day4-aws-intermediate.md" style="text-decoration:none;">
+    <div style="border:1px solid #e5e7eb; border-radius:14px; padding:16px; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.06);">
+      <div style="font-size:28px;">🟧</div>
+      <div style="font-weight:700; font-size:18px; margin-top:6px;">Day 4 — AWS</div>
+      <div style="color:#374151; margin-top:4px;">CMK Rotation + Aliases Automation</div>
+      <div style="margin-top:10px; font-weight:600; color:#0ea5e9;">🔗 View Lab</div>
+    </div>
+  </a>
+
+  <!-- Day 5 (coming) -->
+  <a href="day-by-day/day5-azure-intermediate.md" style="text-decoration:none;">
+    <div style="border:1px solid #e5e7eb; border-radius:14px; padding:16px; background:#f8fafc; box-shadow:0 2px 6px rgba(0,0,0,0.04);">
+      <div style="font-size:28px;">🟦</div>
+      <div style="font-weight:700; font-size:18px; margin-top:6px;">Day 5 — Azure</div>
+      <div style="color:#374151; margin-top:4px;">Managed HSM + Disk Encryption Sets</div>
+      <div style="margin-top:10px; font-weight:600; color:#0ea5e9;">🔗 View Lab</div>
+    </div>
+  </a>
+
+  <!-- Day 6 -->
+  <div style="border:1px dashed #e5e7eb; border-radius:14px; padding:16px; background:#fafafa;">
+    <div style="font-size:28px;">🟨</div>
+    <div style="font-weight:700; font-size:18px; margin-top:6px;">Day 6 — GCP</div>
+    <div style="color:#6b7280; margin-top:4px;">External Key Manager (EKM) Integration</div>
+    <div style="margin-top:10px; font-weight:600; color:#9ca3af;">🚧 Coming soon</div>
+  </div>
+
+  <!-- Day 7 -->
+  <div style="border:1px dashed #e5e7eb; border-radius:14px; padding:16px; background:#fafafa;">
+    <div style="font-size:28px;">☁️</div>
+    <div style="font-weight:700; font-size:18px; margin-top:6px;">Day 7 — Cross-Cloud</div>
+    <div style="color:#6b7280; margin-top:4px;">Cross-Account / Cross-Cloud BYOK</div>
+    <div style="margin-top:10px; font-weight:600; color:#9ca3af;">🚧 Coming soon</div>
+  </div>
+
+  <!-- Day 8 -->
+  <div style="border:1px dashed #e5e7eb; border-radius:14px; padding:16px; background:#fafafa;">
+    <div style="font-size:28px;">☁️</div>
+    <div style="font-weight:700; font-size:18px; margin-top:6px;">Day 8 — Cross-Cloud</div>
+    <div style="color:#6b7280; margin-top:4px;">Envelope Encryption Deep Dive</div>
+    <div style="margin-top:10px; font-weight:600; color:#9ca3af;">🚧 Coming soon</div>
+  </div>
+
+  <!-- Day 9 -->
+  <div style="border:1px dashed #e5e7eb; border-radius:14px; padding:16px; background:#fafafa;">
+    <div style="font-size:28px;">☁️</div>
+    <div style="font-weight:700; font-size:18px; margin-top:6px;">Day 9 — Cross-Cloud</div>
+    <div style="color:#6b7280; margin-top:4px;">Key Governance, RBAC, Audit</div>
+    <div style="margin-top:10px; font-weight:600; color:#9ca3af;">🚧 Coming soon</div>
+  </div>
+
+  <!-- Day 10 -->
+  <div style="border:1px dashed #e5e7eb; border-radius:14px; padding:16px; background:#fafafa;">
+    <div style="font-size:28px;">☁️</div>
+    <div style="font-weight:700; font-size:18px; margin-top:6px;">Day 10 — Capstone</div>
+    <div style="color:#6b7280; margin-top:4px;">Unified Multi-Cloud KMS Security Dashboard</div>
+    <div style="margin-top:10px; font-weight:600; color:#9ca3af;">🚧 Coming soon</div>
+  </div>
+
+</div>
+
 ---
 
 ## 🧩 Repository Map
