@@ -145,25 +145,26 @@ No downtime, no reconfiguration — just steady evolution.
 ```mermaid
 flowchart LR
     App["🧩 Application"]
-    Alias["🔑 Alias: app/secure-key"]
-    V1["CMK v1"]
-    V2["CMK v2"]
+    Alias["🔑 Key Alias<br/>app/secure-key"]
+    V1["CMK v1<br/>Inactive"]
+    V2["CMK v2<br/>Active"]
     Vault["🏦 KMS Vault"]
     CloudTrail[(CloudTrail Logs)]
     
-    App -->|"Encrypt/Decrypt<br/>via Alias"| Alias
-    Alias -->|"Points to<br/>Current Version"| V2
-    V1 -.->|"rotated to"| V2
-    V2 -->|"Stored in"| Vault
-    Vault -.->|"Rotation logs"| CloudTrail
+    App -->|"Uses alias for<br/>encrypt/decrypt"| Alias
+    Alias -->|"Points to<br/>active version"| V2
+    V1 -.->|"Auto-rotated to"| V2
+    V2 -->|"Master key<br/>secured in"| Vault
+    Vault -.->|"Key rotation<br/>events logged to"| CloudTrail
 
-    style App fill:#e3f2fd
-    style Alias fill:#fff3e0
-    style V1 fill:#ffebee
-    style V2 fill:#e8f5e8
-    style Vault fill:#f3e5f5
-    style CloudTrail fill:#f5f5f5
-    ```
+    style App fill:#e3f2fd,stroke:#1976d2
+    style Alias fill:#fff3e0,stroke:#f57c00
+    style V1 fill:#ffebee,stroke:#c62828
+    style V2 fill:#e8f5e8,stroke:#2e7d32
+    style Vault fill:#f3e5f5,stroke:#7b1fa2
+    style CloudTrail fill:#f5f5f5,stroke:#607d8b
+```
+
 🧠 Quick Quiz
 What’s the main benefit of using aliases in AWS KMS?
 
