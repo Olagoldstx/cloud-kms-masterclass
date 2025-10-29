@@ -1,0 +1,3 @@
+- **Azure**
+  - Day 2 — [Theory](azure/day2-theory.md) • [Lab](../day-by-day/day2-azure-beginner.md)
+  - Day 5 — [Theory](azure/day5-theory.md) • [Lab](../day-by-day/day5-azure-intermediate.md)

@@ -120,6 +120,7 @@ Each day includes: deep theory, CLI & IaC, diagrams, cloud-native verification, 
 
 </div>
 
+**Azure Day 5 Theory:** [Managed HSM vs Key Vault + DES](docs/azure/day5-theory.md)
 ---
 
 ## 🧩 Repository Map
