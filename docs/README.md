@@ -5,6 +5,13 @@ with **lab exercises** (hands-on CLI + Terraform).
 
 ---
 
+# 📚 Cloud KMS Masterclass — Textbook Index
+
+Each module combines **theory** (concepts, diagrams, and mental models)  
+with **lab exercises** (hands-on CLI + Terraform).
+
+---
+
 ## 🟧 AWS
 - Day 1 — [Theory](aws/day1-theory.md) • [Lab](../day-by-day/day1-aws-beginner.md)
 - Day 4 — [Theory](aws/day4-theory.md) • [Lab](../day-by-day/day4-aws-intermediate.md)
@@ -20,6 +27,19 @@ with **lab exercises** (hands-on CLI + Terraform).
 ## 🟨 GCP
 - Day 3 — [Theory](gcp/day3-theory.md) • [Lab](../day-by-day/day3-gcp-beginner.md)
 - Day 6 — [Theory](gcp/day6-theory.md) • [Lab](../day-by-day/day6-gcp-intermediate.md)
+
+---
+
+## ☁️ Cross-Cloud
+- **Day 7 — [Theory](cross-cloud/day7-theory.md)** • [Lab](../day-by-day/day7-cross-cloud-intermediate.md)
+- Day 8 – Envelope Encryption Deep Dive (coming soon)
+- Day 9 – Key Governance & RBAC Audit (coming soon)
+- Day 10 – Capstone Dashboard Project (coming soon)
+
+---
+
+> 💡 Use this index to jump between theory and labs quickly while following your GitHub course portal.
+
 
 ---
 
