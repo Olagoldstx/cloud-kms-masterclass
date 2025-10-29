@@ -29,6 +29,8 @@ flowchart LR
   SVC -->|"Encrypt request"| EKM
   EKM -->|"Wrap/Unwrap via EKM API"| ExtKey
   ExtKey -. "Audit & Control remain external" .-> YourHSM
+```
+
 🎯 Goals
 Set up a Cloud KMS key ring and external key reference
 
