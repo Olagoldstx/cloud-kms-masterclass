@@ -42,6 +42,7 @@ flowchart LR
   DES_ID --> Vault
   DES --> Vault
   Vault -. "Wrap/Unwrap via CMK" .-> Vault
+```
 🧩 Roles & Identities (What talks to whom?)
 Azure uses RBAC (control-plane) + Crypto roles (data-plane) on the vault/HSM scope:
 
