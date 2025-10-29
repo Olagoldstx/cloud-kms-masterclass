@@ -90,20 +90,21 @@ VM disks show “EncryptedWithCustomerKey” / DES ID bound.
 
 You can disable the key (temporary) and observe failure → then enable and recover (don’t do in prod).
 
-mermaid
-Copy code
+```mermaid
 %%{init: {'theme':'base'}}%%
 sequenceDiagram
-  participant VM as VM / Disk
-  participant DES as DES (identity)
-  participant VAULT as KV/MHSM
-  VM->>DES: Encrypt/Decrypt request
-  DES->>VAULT: Use CMK (wrap/unwrap)
-  VAULT-->>DES: Result
-  DES-->>VM: OK
-  Note over VAULT: Audit logs record crypto operations
-⚠️ Common Pitfalls
-Forgot DES role on vault/HSM → VM creation fails or disk cannot attach with CMK.
+    participant VM as VM / Disk
+    participant DES as Disk Encryption Set
+    participant VAULT as Key Vault / HSM
+    
+    VM->>DES: Encrypt/Decrypt request
+    DES->>VAULT: Use CMK (wrap/unwrap)
+    VAULT-->>DES: Cryptographic result
+    DES-->>VM: Operation completed
+    
+    Note right of VAULT: Audit logs record<br/>all cryptographic operations
+```
+
 
 Key disabled/deleted → existing disks fail on operations; boot may fail.
 
