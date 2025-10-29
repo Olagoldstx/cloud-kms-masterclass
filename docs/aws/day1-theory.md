@@ -25,6 +25,8 @@ flowchart LR
   DEK -->|Wrapped by KEK| EncDEK[Wrapped DEK]
   Data -->|Stored with| EncDEK
   Vault -.Rotate/Audit.-> Vault
+```
+
 2️⃣ Key Hierarchy and Terminology
 Layer	Purpose	Lifetime	Example
 CMK (Customer Managed Key)	Root KEK stored in HSM	Long-term	alias/masterclass-cmk
