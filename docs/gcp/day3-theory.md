@@ -1,48 +1,71 @@
-<p align="center"><img src="https://github.com/user-attachments/assets/0ce41038-66c2-4146-a1ab-674790ecf941" width="70%"></p>
+# 🟨 GCP Day 3 – CMEK + Cloud Storage + BigQuery Encryption
 
-# 🟨 Day 3 — GCP Theory: CMEK for Cloud Storage & BigQuery
+![securethecloud](https://github.com/user-attachments/assets/0ce41038-66c2-4146-a1ab-674790ecf941)
 
-## 🧭 What you’ll learn
-- **Cloud KMS** key ring / key / version model
-- **CMEK** for Storage buckets and BigQuery datasets
-- Roles, rotation, and audit logs
+---
 
-## 🧠 Analogy: “Library & Master Key”
-The **key ring** is a shelf; each **key** is a book; each **version** is a new edition.  
-Services borrow the book (CMK) to **wrap/unwrap** data keys.
+## 🎯 Goals
+- Understand how Customer-Managed Encryption Keys (CMEK) integrate with GCP services  
+- Encrypt Cloud Storage buckets and BigQuery datasets with CMEK  
+- Use IAM to delegate KMS key usage across projects  
+- Visualize CMEK hierarchy and key rotation
 
+---
+
+## 🧠 Concept Analogy
+Think of **GCP KMS** as your digital vault.  
+Each service (like BigQuery or Cloud Storage) checks out a **key badge** to access your encrypted boxes, but the master vault key never leaves KMS.  
+
+[BigQuery Job] → [CMEK Reference] → [Cloud KMS KeyRing/Key] → [Envelope Encryption]
+
+
+---
+
+## 🔐 Core Components
+| Layer | Description |
+|-------|--------------|
+| **KeyRing** | Logical group for keys |
+| **CryptoKey** | Actual encryption key (CMEK) |
+| **IAM Policy** | Controls who can use or rotate the key |
+| **Service Agent** | The identity BigQuery or Cloud Storage uses under the hood |
+
+---
+
+## 🧩 Architecture Flow (Mermaid)
 ```mermaid
 flowchart LR
-  KMS["🏦 Cloud KMS (CMEK)"]
-  GCS["📦 Cloud Storage"]
-  BQ["📊 BigQuery"]
-  GCS -->|"Uses CMEK"| KMS
-  BQ -->|"Uses CMEK"| KMS
+  A[Cloud KMS KeyRing] --> B(CryptoKey: CMEK)
+  B --> C(BigQuery Dataset)
+  B --> D(Cloud Storage Bucket)
+  C --> E[Service Account: bigquery-svc]
+  D --> F[Service Account: storage-svc]
 ```
-🔑 Roles
 
-roles/cloudkms.admin — manage rings/keys
+🧪 Example CLI Setup
 
-roles/cloudkms.cryptoKeyEncrypterDecrypter — use for wrap/unwrap
+gcloud kms keyrings create secure-ring \
+  --location=us-central1
 
-Service agents for Storage / BigQuery need access to the key
+gcloud kms keys create cmek-demo \
+  --location=us-central1 --keyring=secure-ring \
+  --purpose=encryption
 
-🔁 Rotation
+# Bind IAM roles for BigQuery & Storage
+gcloud kms keys add-iam-policy-binding cmek-demo \
+  --keyring=secure-ring --location=us-central1 \
+  --member=serviceAccount:service-${PROJECT_NUM}@gs-project-accounts.iam.gserviceaccount.com \
+  --role=roles/cloudkms.cryptoKeyEncrypterDecrypter
 
-New key versions created on schedule; services pick latest
+🔁 Rotation + Audit
 
-Old versions remain for decrypt
+Enable key rotation with:
 
-🧾 Audit
+gcloud kms keys update cmek-demo \
+  --location=us-central1 --keyring=secure-ring \
+  --rotation-period=90d --next-rotation-time=$(date -u -d '90 days' +%Y-%m-%dT%H:%M:%SZ)
 
-Cloud Audit Logs for KMS + services
+🧭 Summary
 
-Label keys (env=prod, app=…) for governance
+CMEK centralizes key control across multiple GCP services—BigQuery, GCS, Pub/Sub—while maintaining separation of duties through IAM.
 
-✅ Checklist
-
-Same location for bucket/dataset and KMS key
-
-Grant least privilege to service accounts
-
-Track key versions and rotation cadence
+It’s the foundation for Cross-Cloud BYOK (Day 7).

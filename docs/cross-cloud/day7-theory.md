@@ -1,44 +1,56 @@
-<p align="center"><img src="https://github.com/user-attachments/assets/0ce41038-66c2-4146-a1ab-674790ecf941" width="70%"></p>
+# ☁️ Day 7 — Cross-Cloud BYOK (AWS ↔ Azure ↔ GCP)
 
-# ☁️ Day 7 — Theory: Cross-Cloud BYOK (AWS ↔ Azure ↔ GCP)
+![securethecloud](https://github.com/user-attachments/assets/0ce41038-66c2-4146-a1ab-674790ecf941)
 
-## 🧭 What you’ll learn
-- Practical **BYOK** patterns that differ by cloud
-- Reusing **AES-256** bytes in **AWS + GCP**; RSA import for **Azure KV**
-- Governance: aliases, rotation rhythm, and audit unification
+---
 
-## 🧠 Mental model: “One Master, Three Doors”
-You hold the **master key**; each cloud gets a compatible **door key**.
+## 🎯 Objectives
+- Understand *Bring Your Own Key* (BYOK) interoperability across major clouds  
+- Export AWS KMS CMK to Azure Key Vault / GCP KMS using secure key material transfer  
+- Implement shared trust anchors via **HSM wrapping**  
+- Learn compliance considerations for multi-tenant encryption
 
+---
+
+## 🧠 Analogy
+Imagine you’re transferring a **vault key** between three banks.  
+Each bank uses a different lock format, so you wrap your key inside a tamper-proof envelope signed by your original bank’s HSM.  
+Only the recipient bank can unwrap it securely.
+
+---
+
+## 🔐 BYOK Flow (Mermaid)
 ```mermaid
 flowchart LR
-  YOU["🏠 Your HSM/Offline"]
-  AWS["🟧 AWS KMS (AES import)"]
-  AZ["🟦 Azure KV (RSA import) / MHSM (AES)"]
-  GCP["🟨 GCP KMS (AES import job)"]
-  YOU --> AWS
-  YOU --> AZ
-  YOU --> GCP
+  A[AWS KMS CMK] -->|Export (wrapped)| B[Azure Key Vault HSM]
+  B -->|Rewrap| C[GCP Cloud KMS]
+  C -->|Usage| D[Cross-Cloud Workloads]
 ```
 
-🔑 Reality matrix
-Cloud	Typical BYOK	Same bytes as others?
-AWS KMS	AES-256 import (EXTERNAL)	✅ with GCP
-Azure Key Vault	RSA-2048/EC import	❌ (algo differs)
-Azure Managed HSM	AES (oct-HSM)	⚠️ advanced
-GCP KMS	AES-256 via Import Job	✅ with AWS
-🧾 Governance handoff
+🧰 Tools & Formats
+Platform	Key Export Format	Tool / CLI
+AWS KMS	RSA 2048 + AES-KeyWrap	aws kms get-parameters-for-import
+Azure Key Vault	PKCS#12 Bundle	az keyvault key import
+GCP KMS	JSON Key Envelope	gcloud kms keys versions import
+🧪 Hands-On Pattern
 
-Aliases/labels aligned: alias/byok/app-prod, app=prod
+Generate export parameters in AWS KMS
 
-Rotation cadence (e.g., 90/180 days) per cloud, same calendar
+Wrap the CMK using AWS-provided public key
 
-Audit into one SIEM: CloudTrail + Activity Logs + Audit Logs
+Transfer to Azure HSM via secure channel
 
-⚠️ Pitfalls
+Re-wrap and import into GCP KMS for shared workloads
 
-Expecting identical keys in all three clouds without MHSM
+⚙️ Compliance Notes
 
-Region/key-version mismatches
+Maintain HSM attestation chains
 
-Losing imported material ⇒ data unrecoverable
+Log all BYOK transfers in CloudTrail, Azure Monitor, and Cloud Logging
+
+Ensure FIPS 140-2 Level 3 for key material during transit
+
+🧭 Summary
+
+Cross-Cloud BYOK enables unified control and crypto sovereignty—your keys, your clouds.
+This sets the stage for Day 8 — Envelope Encryption Deep Dive.
