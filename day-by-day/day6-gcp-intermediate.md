@@ -151,8 +151,6 @@ If your EKM endpoint is unavailable, GCP returns an encryption failure.
 You can design a dual-mode pattern: CMEK (GCP) fallback for non-critical workloads, EKM for regulated data.
 
 ```mermaid
-Copy code
-%%{init: {'theme':'base'}}%%
 flowchart LR
   subgraph EKM["🏦 External Key Manager"]
     ExtKey[(Master Key)]
