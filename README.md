@@ -66,13 +66,16 @@ flowchart LR
     subgraph Vault[🔐 Key Management Service]
         CMK[Customer Master Key<br/>Stored in HSM]
     end
-     DEK[📄 Data Encryption Key<br/>Ephemeral / Wrapped]
+    
+    DEK[📄 Data Encryption Key<br/>Ephemeral / Wrapped]
     Data[💾 Encrypted Data<br/>Stored in Object Storage]
     Audit[(Audit Logs)]
-     CMK -->|Wraps & Unwraps| DEK
+    
+    CMK -->|Wraps & Unwraps| DEK
     DEK -->|Encrypts & Decrypts| Data
     Vault -.->|Audit Trail &<br/>Access Logging| Audit
-     style Vault fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    
+    style Vault fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
     style CMK fill:#e1f5fe,stroke:#0288d1
     style DEK fill:#fff3e0,stroke:#f57c00
     style Data fill:#e8f5e8,stroke:#388e3c
