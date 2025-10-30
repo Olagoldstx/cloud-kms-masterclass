@@ -23,23 +23,105 @@ Each day includes: deep theory, CLI & IaC, diagrams, cloud-native verification, 
 
 ---
 
-## 🗺️ 10-Day Roadmap
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0ce41038-66c2-4146-a1ab-674790ecf941" width="70%">
+</p>
 
-| Day | Provider | Title | Theory | Lab |
-|-----|-----------|--------|--------|------|
-| 1 | 🟧 AWS | S3 + EBS with Customer-Managed Key | [📘 Theory](docs/aws/day1-theory.md) | [🔗 Lab](day-by-day/day1-aws-beginner.md) |
-| 2 | 🟦 Azure | Blob Storage Encryption with AKV CMK | [📘 Theory](docs/azure/day2-theory.md) | [🔗 Lab](day-by-day/day2-azure-beginner.md) |
-| 3 | 🟨 GCP | BigQuery CMEK + Cloud Storage Encryption | [📘 Theory](docs/gcp/day3-theory.md) | [🔗 Lab](day-by-day/day3-gcp-beginner.md) |
-| 4 | 🟧 AWS | CMK Rotation + Aliases Automation | [📘 Theory](docs/aws/day4-theory.md) | [🔗 Lab](day-by-day/day4-aws-intermediate.md) |
-| 5 | 🟦 Azure | Managed HSM + Disk Encryption Sets | [📘 Theory](docs/azure/day5-theory.md) | [🔗 Lab](day-by-day/day5-azure-intermediate.md) |
-| 6 | 🟨 GCP | External Key Manager (EKM) Integration | [📘 Theory](docs/gcp/day6-theory.md) | [🔗 Lab](day-by-day/day6-gcp-intermediate.md) |
-| 7 | ☁️ Cross-Cloud | Cross-Account / Cross-Cloud BYOK | [📘 Theory](docs/cross-cloud/day7-theory.md) | [🔗 Lab](day-by-day/day7-cross-cloud-intermediate.md) |
-| 8 | ☁️ Cross-Cloud | Envelope Encryption Deep Dive | 🚧 Coming soon | 🚧 Coming soon |
-| 9 | ☁️ Cross-Cloud | Key Governance, RBAC, Audit | 🚧 Coming soon | 🚧 Coming soon |
-| 10 | ☁️ Capstone | Unified Multi-Cloud KMS Security Dashboard | 🚧 Coming soon | 🚧 Coming soon |
+# 🛡️ Cloud KMS Masterclass (AWS · Azure · GCP)
+_A multi-cloud encryption journey — from zero to governance._
 
+---
 
+## 🗺️ 10-Day Roadmap · Interactive Portal
+
+<table>
+<tr>
+<td align="center" width="33%">
+
+### 🟧 Day 1 — AWS  
+**S3 + EBS with Customer-Managed Key**  
+[📘 Theory](docs/aws/day1-theory.md) • [🔗 Lab](day-by-day/day1-aws-beginner.md)
+
+</td>
+<td align="center" width="33%">
+
+### 🟦 Day 2 — Azure  
+**Blob Storage Encryption with AKV CMK**  
+[📘 Theory](docs/azure/day2-theory.md) • [🔗 Lab](day-by-day/day2-azure-beginner.md)
+
+</td>
+<td align="center" width="33%">
+
+### 🟨 Day 3 — GCP  
+**BigQuery CMEK + Cloud Storage Encryption**  
+[📘 Theory](docs/gcp/day3-theory.md) • [🔗 Lab](day-by-day/day3-gcp-beginner.md)
+
+</td>
+</tr>
+
+<tr>
+<td align="center">
+
+### 🟧 Day 4 — AWS  
+**CMK Rotation + Aliases Automation**  
+[📘 Theory](docs/aws/day4-theory.md) • [🔗 Lab](day-by-day/day4-aws-intermediate.md)
+
+</td>
+<td align="center">
+
+### 🟦 Day 5 — Azure  
+**Managed HSM + Disk Encryption Sets**  
+[📘 Theory](docs/azure/day5-theory.md) • [🔗 Lab](day-by-day/day5-azure-intermediate.md)
+
+</td>
+<td align="center">
+
+### 🟨 Day 6 — GCP  
+**External Key Manager (EKM) Integration**  
+[📘 Theory](docs/gcp/day6-theory.md) • [🔗 Lab](day-by-day/day6-gcp-intermediate.md)
+
+</td>
+</tr>
+
+<tr>
+<td align="center">
+
+### ☁️ Day 7 — Cross-Cloud  
+**BYOK (AWS ↔ Azure ↔ GCP)**  
+[📘 Theory](docs/cross-cloud/day7-theory.md) • [🔗 Lab](day-by-day/day7-cross-cloud-intermediate.md)
+
+</td>
+<td align="center">
+
+### ☁️ Day 8 — Cross-Cloud  
+**Envelope Encryption Deep Dive + RBAC**  
+[📘 Theory](docs/cross-cloud/day8-theory.md) • [🔗 Lab](day-by-day/day8-crosscloud-intermediate.md)
+
+</td>
+<td align="center">
+
+### ☁️ Day 9 — Cross-Cloud  
+**Key Governance, RBAC & Audit Automation**  
+[📘 Theory](docs/cross-cloud/day9-theory.md) • [🔗 Lab](day-by-day/day9-crosscloud-advanced.md)
+
+</td>
+</tr>
+
+<tr>
+<td colspan="3" align="center">
+
+### ☁️ Day 10 — Capstone  
+**Unified Multi-Cloud KMS Security Dashboard**  
+🚧 Coming Soon
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📚 Resources & Directories
 
 **Azure Day 5 Theory:** [Managed HSM vs Key Vault + DES](docs/azure/day5-theory.md)
 ---
@@ -98,11 +180,17 @@ flowchart LR
 🧠 Study Tip
 “Encryption without key mastery is illusion — this course makes you the keysmith.” 🔐
 
-Commit as you complete each day:
 
-bash
-Copy code
-git add .
-git commit -m "feat: complete dayX lab"
-git push
+docs/ → All textbook theory chapters
+day-by-day/ → Hands-on labs
+terraform/ → IaC templates
+slides/ → Presentation materials
+anki/ → Flashcards
+
+git clone https://github.com/Olagoldstx/cloud-kms-masterclass.git
+cd cloud-kms-masterclass
+nano day-by-day/day1-aws-beginner.md
+
 <p align="center">💥 <b>Let’s roll — your journey to KMS mastery begins here.</b> 🚀</p> ```
+
+“Governance is the bridge between security and accountability.” — Secure the Cloud Dev Labs
