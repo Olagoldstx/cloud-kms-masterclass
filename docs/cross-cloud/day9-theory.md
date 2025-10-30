@@ -30,6 +30,7 @@ Governance is the **conductor** ensuring every player (key, user, system) stays 
 ---
 
 ## 🧩 Diagram — Multi-Cloud Governance Flow
+
 ```mermaid
 flowchart LR
   subgraph AWS
@@ -50,6 +51,7 @@ flowchart LR
   C2 --> D1
   D1 --> D2
   D2 -->|Remediation| A1 & B1 & C1
+```
 🧱 Core Concepts
 🔑 1. Policy-as-Code
 Define rules in code (Terraform, OPA, Bicep):
