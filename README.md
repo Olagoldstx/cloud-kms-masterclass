@@ -21,12 +21,6 @@ This course takes you from KMS beginner to **multi-cloud encryption architect** 
 
 Each day includes: deep theory, CLI & IaC, diagrams, cloud-native verification, and a quiz/anki set.
 
----
-
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/0ce41038-66c2-4146-a1ab-674790ecf941" width="70%">
-</p>
 
 # 🛡️ Cloud KMS Masterclass (AWS · Azure · GCP)
 _A multi-cloud encryption journey — from zero to governance._
