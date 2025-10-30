@@ -47,6 +47,7 @@ flowchart TB
   D --> E[Rotation Alerts]
   D --> F[RBAC Violations]
   D --> G[Key Usage Analytics]
+```
 🧾 Example Metrics to Track
 Metric	Description	Threshold
 🔑 Key Age	Time since last rotation	> 90 days = Alert
