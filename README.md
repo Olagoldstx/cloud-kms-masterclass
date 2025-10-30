@@ -113,7 +113,7 @@ _A multi-cloud encryption journey — from zero to governance._
 
 ### ☁️ Day 10 — Capstone  
 **Unified Multi-Cloud KMS Security Dashboard**  
-🚧 Coming Soon
+[📘 Theory](docs/cross-cloud/day10-theory.md) • [🔗 Lab](day-by-day/day10-capstone-dashboard.md)
 
 </td>
 </tr>
