@@ -36,21 +36,27 @@ flowchart LR
   subgraph AWS
     A1[KMS CMK] --> A2[CloudTrail Logs]
   end
+  
   subgraph Azure
     B1[Key Vault CMK] --> B2[Activity Logs]
   end
+  
   subgraph GCP
     C1[CMEK] --> C2[Audit Logs]
   end
+  
   subgraph Central
-    D1[SIEM (Splunk/ELK/Chronicle)]
-    D2[Policy Engine (Terraform + OPA)]
+    D1[SIEM<br/>Splunk/ELK/Chronicle]
+    D2[Policy Engine<br/>Terraform + OPA]
   end
+  
   A2 --> D1
   B2 --> D1
   C2 --> D1
   D1 --> D2
-  D2 -->|Remediation| A1 & B1 & C1
+  D2 -->|Remediation| A1
+  D2 -->|Remediation| B1
+  D2 -->|Remediation| C1
 ```
 🧱 Core Concepts
 🔑 1. Policy-as-Code
