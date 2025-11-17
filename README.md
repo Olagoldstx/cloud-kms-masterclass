@@ -137,6 +137,9 @@ cloud-kms-masterclass/
 │   ├── diagrams/
 │   └── scripts/
 └── anki/
+
+---
+
 🧠 Encryption Mental Model
 Think of KMS as a digital vault. The master key (CMK) never leaves the vault.
 Workloads get a temporary data key (DEK) to encrypt data; that DEK is then encrypted with your CMK — envelope encryption.
