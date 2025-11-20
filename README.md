@@ -1,3 +1,18 @@
+<!-- BADGES:START -->
+
+<div align="left">
+[![](https://img.shields.io/github/license/Olagoldstx/cloud-kms-masterclass?style=for-the-badge&labelColor=0f172a)](https://github.com/Olagoldstx/cloud-kms-masterclass)
+[![](https://img.shields.io/github/stars/Olagoldstx/cloud-kms-masterclass?style=for-the-badge&labelColor=0f172a&logo=github)](https://github.com/Olagoldstx/cloud-kms-masterclass)
+[![](https://img.shields.io/github/last-commit/Olagoldstx/cloud-kms-masterclass?style=for-the-badge&labelColor=0f172a)](https://github.com/Olagoldstx/cloud-kms-masterclass)
+[![](https://img.shields.io/github/issues/Olagoldstx/cloud-kms-masterclass?style=for-the-badge&labelColor=0f172a)](https://github.com/Olagoldstx/cloud-kms-masterclass)
+[![](https://img.shields.io/github/issues-pr/Olagoldstx/cloud-kms-masterclass?style=for-the-badge&labelColor=0f172a)](https://github.com/Olagoldstx/cloud-kms-masterclass)
+[![](https://img.shields.io/github/repo-size/Olagoldstx/cloud-kms-masterclass?style=for-the-badge&labelColor=0f172a)](https://github.com/Olagoldstx/cloud-kms-masterclass)
+[![](https://img.shields.io/github/languages/top/Olagoldstx/cloud-kms-masterclass?style=for-the-badge&labelColor=0f172a)](https://github.com/Olagoldstx/cloud-kms-masterclass)
+[![](https://img.shields.io/github/actions/workflow/status/Olagoldstx/cloud-kms-masterclass/ci.yml?branch=main&style=for-the-badge&labelColor=0f172a)](https://github.com/Olagoldstx/cloud-kms-masterclass)
+</div>
+
+<!-- BADGES:END -->
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/0ce41038-66c2-4146-a1ab-674790ecf941" 
        alt="Secure the Cloud Banner" 
